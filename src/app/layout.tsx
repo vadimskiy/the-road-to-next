@@ -2,10 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 import { homePath, ticketsPath } from "@/paths";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff", 
+  src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
@@ -16,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tickets Manager",
-  description: "The app for managing tickets",
+  title: "The Road to Next",
+  description: "My Road to Next application ...",
 };
 
 export default function RootLayout({
@@ -39,12 +40,18 @@ export default function RootLayout({
           "
         >
           <div>
-            <Link href={homePath()} className="text-lg font-bold">
+            <Link
+              href={homePath()}
+              className={buttonVariants({ variant: "outline" })}
+            >
               Home
             </Link>
           </div>
           <div>
-            <Link href={ticketsPath()} className="text-sm underline">
+            <Link
+              href={ticketsPath()}
+              className={buttonVariants({ variant: "outline" })}
+            >
               Tickets
             </Link>
           </div>
