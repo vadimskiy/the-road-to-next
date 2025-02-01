@@ -3,8 +3,8 @@ import { cloneElement } from "react";
 
 type PlaceholderProps = {
     label: string;
-    icon?: React.ReactElement;
-    button?: React.ReactElement;
+    icon?: React.ReactElement<React.SVGProps<SVGSVGElement>, "svg">;
+    button?: React.ReactElement<React.HTMLProps<HTMLButtonElement>, "button">;
 }
 
 const Placeholder = ({ label, icon = <LucideMessageSquareWarning />, button = <div /> }: PlaceholderProps) => {
